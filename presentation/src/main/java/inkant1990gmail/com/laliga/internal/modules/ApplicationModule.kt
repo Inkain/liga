@@ -12,8 +12,10 @@ import javax.inject.Singleton
 
 @Module(
 )
-class ApplicationModule(val app: AndroidApplication) {
+class ApplicationModule(private val app: AndroidApplication) {
+
     @Provides
+    @Singleton
     fun provideApplicationContext(): Context = app
 
     @Provides
@@ -23,5 +25,6 @@ class ApplicationModule(val app: AndroidApplication) {
 
         return standingsItemRepository
     }
+
 
 }

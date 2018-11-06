@@ -5,19 +5,27 @@ import android.arch.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import inkant1990gmail.com.laliga.screen.table.StandingsListViewModel
+import inkant1990gmail.com.laliga.screen.table.goalsList.GoalsListViewModel
+import inkant1990gmail.com.laliga.screen.table.standingsList.StandingsListViewModel
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelFactory
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelKey
 
 @Module
 abstract class ViewModelModule {
+
+
+    @Binds
+    internal abstract fun bindViewModelFactory(factory: ViewModelFactory):
+            ViewModelProvider.Factory
+
     @Binds
     @IntoMap
     @ViewModelKey(StandingsListViewModel::class)
-    abstract fun standingsViewModel(viewModel: StandingsListViewModel): ViewModel
+    abstract fun standingsListViewModel(viewModel: StandingsListViewModel): ViewModel
 
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory):
-            ViewModelProvider.Factory
+    @IntoMap
+    @ViewModelKey(GoalsListViewModel::class)
+    abstract fun goalsListViewModel(viewModel: GoalsListViewModel): ViewModel
 
 }

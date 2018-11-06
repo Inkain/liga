@@ -1,23 +1,31 @@
 package inkant1990gmail.com.laliga.base
 
 import android.arch.lifecycle.ViewModel
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
-abstract class BaseViewModel<R:BaseRouter<*>> : ViewModel() {
-    protected var router:R?=null
+abstract class BaseViewModel<R : BaseRouter<*>> : ViewModel() {
 
+    protected var router: R? = null
 
-    fun addRouter(router:R){
-        this.router=router
+    protected val compositeDisposable: CompositeDisposable by lazy {
+        CompositeDisposable()
     }
-    fun removeRouter(){
-        this.router=null
+
+    fun addRouter(router: R?) {
+        this.router = router
     }
 
-    override  fun onCleared() {
+    fun removeRouter() {
+        this.router = null
+    }
+
+    protected fun addToDisposable(disposable: Disposable) {
+        compositeDisposable.add(disposable)
+    }
+
+    override fun onCleared() {
         super.onCleared()
-
+        compositeDisposable.clear()
     }
-
-
-
 }

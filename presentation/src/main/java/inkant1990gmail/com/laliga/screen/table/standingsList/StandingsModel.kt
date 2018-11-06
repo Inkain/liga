@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table
+package inkant1990gmail.com.laliga.screen.table.standingsList
 
 data class StandingsModel(
     val loss: Int? = null,

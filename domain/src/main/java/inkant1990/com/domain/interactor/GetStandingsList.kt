@@ -6,7 +6,7 @@ import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+
 class GetStandingsList @Inject constructor(val standingsRepository: StandingsRepository) :
     UseCase<MutableCollection<TeamStandings>, Unit>() {
 

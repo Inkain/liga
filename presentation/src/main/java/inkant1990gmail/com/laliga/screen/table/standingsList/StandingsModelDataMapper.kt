@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table
+package inkant1990gmail.com.laliga.screen.table.standingsList
 
 import inkant1990.com.domain.entity.standings.TeamStandings
 import javax.inject.Inject
