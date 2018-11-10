@@ -13,10 +13,7 @@ abstract class BaseMvvmActivity<VM : BaseViewModel<R>,
     protected lateinit var viewModel: VM
     protected lateinit var binding: B
     lateinit var router: R
-    protected val compositeDisposable: CompositeDisposable by lazy {
-        CompositeDisposable()
 
-    }
 
     abstract fun prodiveViewModel(): VM
 
@@ -42,5 +39,4 @@ abstract class BaseMvvmActivity<VM : BaseViewModel<R>,
         compositeDisposable.clear()
     }
 
-    protected fun addToDisposable(disposable: Disposable) = compositeDisposable.add(disposable)
 }

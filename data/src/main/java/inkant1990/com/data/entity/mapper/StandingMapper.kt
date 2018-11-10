@@ -9,6 +9,7 @@ import javax.inject.Singleton
 class StandingMapper @Inject constructor() {
     var teamStandingsList: MutableCollection<TeamStandings> = mutableListOf()
     fun transformList(response: Response): MutableCollection<TeamStandings> {
+        teamStandingsList.clear()
         var teamStandings: TeamStandings? = null
         response.standings?.get(0)?.groups?.get(0)!!.teamStandings!!.forEach {
             if (it != null) {

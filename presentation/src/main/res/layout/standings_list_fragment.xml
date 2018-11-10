@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="viewModel" type="inkant1990gmail.com.laliga.screen.table.standingsList.StandingsListViewModel"/>
     </data>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="@{viewModel.a}"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+           <TextView
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:text="@string/Rank"
+                   style="@style/LaligaStyleTop"
+           />
+            <TextView
+                    android:layout_weight="2.7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/team"
+                    style="@style/LaligaStyleTop"
+            />
+            <TextView
+                    android:layout_weight="0.8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/games"
+                    style="@style/LaligaStyleTop"
+            />
+            <TextView
+                    android:layout_weight="0.8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/points"
+                    style="@style/LaligaStyleTop"
+            />
+        </LinearLayout>
+
 
         <android.support.v7.widget.RecyclerView
+                style="@style/LaligaStyle"
                 android:id="@+id/recycleStandings"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

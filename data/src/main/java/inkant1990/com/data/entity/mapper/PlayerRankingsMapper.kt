@@ -1,5 +1,6 @@
 package inkant1990.com.data.entity.mapper
 
+import android.util.Log
 import inkant1990.com.data.entity.playerRankings.RankingsResponse
 import inkant1990.com.domain.entity.rankings.TopAssists
 import inkant1990.com.domain.entity.rankings.TopScorers

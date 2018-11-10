@@ -25,7 +25,7 @@ class ViewPagerAdapter : FragmentPagerAdapter {
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        // TODO: implement your own page title.
-        return mFragments!![position].javaClass.simpleName
+        val list= listOf<String>("Standings","Rankings","Schedule")
+        return list.get(position)
     }
 }

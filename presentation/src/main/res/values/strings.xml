@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">La Liga</string>
+    <string name="Rank">Rank</string>
+    <string name="team">Team</string>
+    <string name="games">Games</string>
+    <string name="points">Points</string>
+    <string name="goals">Goals</string>
+    <string name="assists">Assists</string>
+    <string name="yellows">Yellows</string>
+    <string name="reds">Reds</string>
+    <string name="table">table</string>
+    <string name="stats">stats</string>
+    <string name="schedule">schedule</string>
 </resources>

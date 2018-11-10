@@ -1,15 +1,23 @@
 package inkant1990gmail.com.laliga.base
 
-import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v4.app.FragmentActivity
-import dagger.android.support.HasSupportFragmentInjector
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
+abstract class BaseActivity : FragmentActivity() {
+    protected val compositeDisposable: CompositeDisposable by lazy {
+        CompositeDisposable()
+    }
 
-abstract class BaseActivity : FragmentActivity(){
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState)
+    protected fun addToDisposable(disposable: Disposable) {
+        compositeDisposable.add(disposable)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 }
+
 
 

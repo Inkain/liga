@@ -4,12 +4,12 @@
     <data>
         <variable name="viewModel" type="inkant1990gmail.com.laliga.screen.table.goalsList.GoalsListViewModel"/>
     </data>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="@{viewModel.a}"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycleStandings"
+            android:id="@+id/recycleScorers"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
