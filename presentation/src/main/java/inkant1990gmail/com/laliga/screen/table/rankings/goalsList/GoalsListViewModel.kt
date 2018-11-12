@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table.goalsList
+package inkant1990gmail.com.laliga.screen.table.rankings.goalsList
 
 import android.util.Log
 import inkant1990.com.domain.interactor.GetScorersList
@@ -11,7 +11,7 @@ import javax.inject.Inject
 class GoalsListViewModel @Inject constructor(
     private val getScorersList: GetScorersList,
     val adapter: GoalsListAdapter
-) : BaseViewModel<TeamProfileRouter>() {
+) : BaseViewModel<TableRouter>() {
 
 
     init {

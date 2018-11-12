@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table.goalsList
+package inkant1990gmail.com.laliga.screen.table.rankings.goalsList
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,9 +7,11 @@ import android.view.View
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseMvvmFragment
 import inkant1990gmail.com.laliga.databinding.GoalsListFragmentBinding
+import inkant1990gmail.com.laliga.screen.table.TableActivity
+import inkant1990gmail.com.laliga.screen.table.TableRouter
 import inkant1990gmail.com.laliga.screen.teamProfile.TeamProfileRouter
 
-class GoalsListFragment : BaseMvvmFragment<GoalsListViewModel, TeamProfileRouter, GoalsListFragmentBinding>() {
+class GoalsListFragment : BaseMvvmFragment<GoalsListViewModel, TableRouter, GoalsListFragmentBinding>() {
     companion object {
         fun getInstance(): GoalsListFragment {
             return GoalsListFragment()

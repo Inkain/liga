@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table.goalsList
+package inkant1990gmail.com.laliga.screen.table.rankings.goalsList
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView

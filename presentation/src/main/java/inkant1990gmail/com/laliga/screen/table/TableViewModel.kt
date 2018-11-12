@@ -6,6 +6,9 @@ import inkant1990gmail.com.laliga.base.BaseViewModel
 class TableViewModel
 
     : BaseViewModel<TableRouter>() {
+    init {
+        router?.goToTable()
+    }
 
     fun goToTable(v: View) {
         router?.goToTable()

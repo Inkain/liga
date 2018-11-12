@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.table.adapters
+package inkant1990gmail.com.laliga.screen.table.rankings.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

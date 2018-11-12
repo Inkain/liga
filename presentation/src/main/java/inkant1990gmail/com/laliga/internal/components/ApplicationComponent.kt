@@ -4,7 +4,8 @@ import dagger.Component
 import inkant1990gmail.com.laliga.AndroidApplication
 import inkant1990gmail.com.laliga.internal.modules.ApplicationModule
 import inkant1990gmail.com.laliga.internal.modules.ViewModelModule
-import inkant1990gmail.com.laliga.screen.table.goalsList.GoalsListFragment
+import inkant1990gmail.com.laliga.screen.table.rankings.assistsList.AssistsFragment
+import inkant1990gmail.com.laliga.screen.table.rankings.goalsList.GoalsListFragment
 import inkant1990gmail.com.laliga.screen.table.scheduleList.ScheduleFragment
 import inkant1990gmail.com.laliga.screen.table.standingsList.StandingsListFragment
 import javax.inject.Singleton
@@ -17,6 +18,7 @@ interface ApplicationComponent {
     fun inject(app: StandingsListFragment)
     fun inject(app: GoalsListFragment)
     fun inject(app: ScheduleFragment)
+    fun inject(app: AssistsFragment)
 
 }
 
