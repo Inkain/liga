@@ -23,5 +23,5 @@ data class TopCardsItem(
 	val team: Team? = null,
 
 	@field:SerializedName("player")
-	val player: Player? = null
+	val player: Player
 )

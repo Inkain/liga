@@ -1,8 +1,8 @@
 package inkant1990.com.data.repository.datasource
 
-import io.reactivex.Observable
+import io.reactivex.Flowable
 
 interface DataStore<T> {
 
-    fun getData(): Observable<T>
+    fun getData(): Flowable<T>
 }

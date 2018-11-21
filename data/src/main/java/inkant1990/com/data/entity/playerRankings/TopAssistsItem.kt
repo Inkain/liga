@@ -17,5 +17,5 @@ data class TopAssistsItem(
 	val team: Team? = null,
 
 	@field:SerializedName("player")
-	val player: Player? = null
+	val player: Player
 )

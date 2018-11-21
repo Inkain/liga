@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+>
+    <data>
+        <variable name="viewModel" type="inkant1990gmail.com.laliga.screen.home.HomeViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/activity_main"
+            style="@style/LaligaStyleBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/homeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.9"
+                app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <Button app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/btTable"
+                android:layout_width="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintWidth_default="percent"
+                android:layout_height="0dp"
+                style="@style/HomeActivityStyle"
+                android:text="@string/table"
+                android:onClick="@{(v) -> viewModel.goToTable(v)  }"/>
+        <Button
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/btTable"
+                android:id="@+id/btStats"
+                android:layout_width="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintWidth_default="percent"
+                android:layout_height="0dp"
+                style="@style/HomeActivityStyle"
+                android:text="@string/stats"
+                android:onClick="@{(v) -> viewModel.goToStats(v)  }"/>
+        <Button app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/btStats"
+                android:id="@+id/btSchedule"
+                android:layout_width="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintWidth_default="percent"
+                android:layout_height="0dp"
+                style="@style/HomeActivityStyle"
+                android:onClick="@{(v) -> viewModel.goToSchedule(v)}"
+                android:text="@string/schedule"/>
+        <Button app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/btSchedule"
+                android:id="@+id/btInfo"
+                android:layout_width="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintWidth_default="percent"
+                android:layout_height="0dp"
+                style="@style/HomeActivityStyle"
+                android:onClick="@{(v) -> viewModel.goToSchedule(v)}"
+                android:text="@string/clubs"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

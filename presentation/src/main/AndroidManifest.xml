@@ -13,7 +13,7 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".screen.table.TableActivity">
+        <activity android:name=".screen.home.HomeActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
 

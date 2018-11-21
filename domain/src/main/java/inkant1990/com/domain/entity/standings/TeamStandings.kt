@@ -1,7 +1,9 @@
 package inkant1990.com.domain.entity.standings
 
+import inkant1990.com.domain.entity.Entity
 
-data class TeamStandings(
+
+data class TeamStandings (
     val loss: Int? = null,
     val goalsAgainst: Int? = null,
     val change: Int? = null,
@@ -14,4 +16,4 @@ data class TeamStandings(
     val points: Int? = null,
     val name: String? = null,
     val id: String? = null
-)
+):Entity

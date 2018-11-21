@@ -2,43 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="viewModel"
-                  type="inkant1990gmail.com.laliga.screen.table.rankings.assistsList.AssistsViewModel"/>
+                  type="inkant1990gmail.com.laliga.screen.rankings.assistsList.AssistsViewModel"/>
     </data>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                   android:orientation="vertical">
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-        >
-            <TextView
-                    android:layout_weight="0.7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/position"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/team"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="0.7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/points"
-                    style="@style/LaligaStyleTop"
-            />
-        </LinearLayout>
+        <include layout="@layout/rankings_top_standart"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+        />
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycleAssists"
                 android:layout_width="match_parent"

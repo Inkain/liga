@@ -6,7 +6,12 @@ import inkant1990gmail.com.laliga.internal.modules.ApplicationModule
 
 
 class AndroidApplication : Application() {
-
+    companion object {
+        lateinit var instance :AndroidApplication
+    }
+    init {
+        instance=this
+    }
 
     val component by lazy(mode = LazyThreadSafetyMode.NONE) {
         DaggerApplicationComponent.builder()

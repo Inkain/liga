@@ -15,10 +15,10 @@ data class Team(
 	val countryCode: String? = null,
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("id")
-	val id: String? = null,
+	val id: String,
 
 	@field:SerializedName("category")
 	val category: Category? = null,

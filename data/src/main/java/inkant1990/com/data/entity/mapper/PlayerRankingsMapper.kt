@@ -12,6 +12,8 @@ class PlayerRankingsMapper @Inject constructor() {
     private var scorersList: MutableCollection<TopScorers> = mutableListOf()
 
     fun transforScorers(rankingsResponse: RankingsResponse): MutableCollection<TopScorers> {
+
+        scorersList.clear()
         rankingsResponse.topGoals?.forEach {
             if (it != null&& it.rank!!.toInt() <= 35){
             scorersList.add(
@@ -22,6 +24,7 @@ class PlayerRankingsMapper @Inject constructor() {
     }
 
     fun transforAssists(rankingsResponse: RankingsResponse): MutableCollection<TopAssists> {
+        assistsList.clear()
         rankingsResponse.topAssists?.forEach {
             if (it != null&& it.rank!!.toInt() <= 35)  assistsList.add(
                 TopAssists(it.assists, it.rank, it.team?.name, it.team?.id, it.player?.name, it.player?.id)

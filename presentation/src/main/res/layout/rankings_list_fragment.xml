@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+                  android:orientation="horizontal"
+                  app:layout_constraintHeight_default="percent"
+                  app:layout_constraintHeight_percent="0.05"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:id="@+id/linera"
+
+    >
+        <TextView
+                android:layout_weight="3.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/player"
+                style="@style/LaligaStyleStandingsTop"
+        />
+        <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/team"
+                style="@style/LaligaStyleStandingsTop"
+        />
+        <TextView
+                android:layout_weight="0.85"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/value"
+                style="@style/LaligaStyleStandingsTop"
+        />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            app:layout_constraintTop_toBottomOf="@+id/linera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/recycle"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.95"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+    </android.support.v7.widget.RecyclerView>
+
+</android.support.constraint.ConstraintLayout>
+
+
+</layout>

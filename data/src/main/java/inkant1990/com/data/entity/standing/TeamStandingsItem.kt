@@ -19,7 +19,7 @@ data class TeamStandingsItem(
     val rank: Int? = null,
 
     @field:SerializedName("team")
-    val team: Team? = null,
+    val team: Team,
 
     @field:SerializedName("draw")
     val draw: Int? = null,

@@ -17,5 +17,5 @@ data class TopGoalsItem(
 	val goals: Int? = null,
 
 	@field:SerializedName("player")
-	val player: Player? = null
+	val player: Player
 )

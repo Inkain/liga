@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">La Liga</string>
-    <string name="Rank">Rank</string>
-    <string name="team">Team</string>
-    <string name="games">Games</string>
-    <string name="points">Points</string>
+    <string name="Rank">Pos</string>
+    <string name="team">Club</string>
+    <string name="games">P</string>
+    <string name="Pts">Pts</string>
     <string name="goals">Goals</string>
     <string name="assists">Assists</string>
     <string name="yellows">Yellows</string>
@@ -11,6 +11,9 @@
     <string name="table">table</string>
     <string name="stats">stats</string>
     <string name="schedule">schedule</string>
-    <string name="position">pos</string>
-    <string name="player">player</string>
+    <string name="player">Player</string>
+    <string name="league_clubs">League clubs</string>
+    <string name="players">Players</string>
+    <string name="clubs">clubs</string>
+    <string name="value">Value</string>
 </resources>

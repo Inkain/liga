@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <data>
+        <variable name="obj" type="inkant1990.com.domain.entity.dailySchedule.DailySchedule"/>
+    </data>
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+        <ImageView
+                android:id="@+id/homeTeamLog"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.3"
+                android:src="@{obj.idHome}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="16dp" android:layout_marginStart="30dp"/>
+        <ImageView
+                android:id="@+id/awayTeamLog"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.3"
+                android:src="@{obj.idAway}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="16dp" android:layout_marginEnd="30dp"/>
+        <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Rankings"
+                app:layout_constraintBottom_toBottomOf="@id/homeTeamLog"
+                app:layout_constraintTop_toTopOf="@id/homeTeamLog"
+                app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
+                app:layout_constraintRight_toRightOf="@id/awayTeamLog"
+                android:text="@{obj.time}"
+        />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Rankings"
+                app:layout_constraintTop_toBottomOf="@id/time"
+                app:layout_constraintLeft_toLeftOf="@id/time"
+                app:layout_constraintRight_toRightOf="@id/time"
+                android:text="@{obj.stadium}"
+        />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Rankings"
+                app:layout_constraintTop_toBottomOf="@id/homeTeamLog"
+                app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
+                app:layout_constraintRight_toRightOf="@id/homeTeamLog"
+                android:text="@{obj.homeTeam}"
+        />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Rankings"
+                app:layout_constraintTop_toBottomOf="@id/awayTeamLog"
+                app:layout_constraintLeft_toLeftOf="@id/awayTeamLog"
+                app:layout_constraintRight_toRightOf="@id/awayTeamLog"
+                android:text="@{obj.awayTeam}"
+        />
+    </android.support.constraint.ConstraintLayout>
+</layout>

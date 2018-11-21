@@ -19,5 +19,5 @@ data class Response(
     val tournament: Tournament? = null,
 
     @field:SerializedName("standings")
-    val standings: List<StandingsItem?>? = null
+    val standings: List<StandingsItem?>
 )

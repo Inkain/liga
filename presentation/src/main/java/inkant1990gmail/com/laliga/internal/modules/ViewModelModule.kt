@@ -5,10 +5,13 @@ import android.arch.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import inkant1990gmail.com.laliga.screen.table.rankings.assistsList.AssistsViewModel
-import inkant1990gmail.com.laliga.screen.table.rankings.goalsList.GoalsListViewModel
-import inkant1990gmail.com.laliga.screen.table.scheduleList.ScheduleViewModel
-import inkant1990gmail.com.laliga.screen.table.standingsList.StandingsListViewModel
+import inkant1990gmail.com.laliga.screen.dailySchedule.DailyScheduleViewModel
+import inkant1990gmail.com.laliga.screen.rankings.assistsList.AssistsViewModel
+import inkant1990gmail.com.laliga.screen.rankings.goalsList.GoalsListViewModel
+import inkant1990gmail.com.laliga.screen.rankings.redsList.RedListViewModel
+import inkant1990gmail.com.laliga.screen.rankings.yellowLists.YellowListViewModel
+import inkant1990gmail.com.laliga.screen.standings.StandingsListViewModel
+import inkant1990gmail.com.laliga.screen.tornamentSchedule.ScheduleViewModel
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelFactory
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelKey
 
@@ -39,5 +42,21 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AssistsViewModel::class)
     abstract fun assistsListViewModel(viewModel: AssistsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DailyScheduleViewModel::class)
+    abstract fun dailyScheduleViewModel(viewModel: DailyScheduleViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(YellowListViewModel::class)
+    abstract fun yellowListViewModel(viewModel: YellowListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RedListViewModel::class)
+    abstract fun redListViewModel(viewModel: RedListViewModel): ViewModel
+
 
 }

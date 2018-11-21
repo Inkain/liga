@@ -3,43 +3,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable name="viewModel"
-                  type="inkant1990gmail.com.laliga.screen.table.rankings.goalsList.GoalsListViewModel"/>
+                  type="inkant1990gmail.com.laliga.screen.rankings.goalsList.GoalsListViewModel"/>
     </data>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                  android:orientation="vertical">
+    android:orientation="vertical">
+        <include layout="@layout/rankings_top_standart"
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+        />
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-        >
-            <TextView
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/position"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/player"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/team"
-                    style="@style/LaligaStyleTop"
-            />
-            <TextView
-                    android:layout_weight="0.6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/points"
-                    style="@style/LaligaStyleTop"
-            />
-        </LinearLayout>
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycleScorers"
                 android:layout_width="match_parent"

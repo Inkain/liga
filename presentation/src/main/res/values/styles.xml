@@ -7,19 +7,30 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="LaligaStyle">
-        <item name="android:textSize">16sp</item>
-        <item name="android:background">#1A000000</item>
-        <item name="android:textColor">@color/white</item>
+    <style name="LaligaStyleStandingsItems">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/Black</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="LaligaStyleTop">
-        <item name="android:textSize">17sp</item>
-        <item name="android:background">#1A000000</item>
-        <item name="android:textColor">#ecc30a</item>
+    <style name="LaligaStyleStandingsTop">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@color/white</item>
         <item name="android:gravity">center</item>
     </style>
     <style name="LaligaStyleBack">
-        <item name="android:background">@drawable/laliga_vertical_logo_vector_black</item>
+
+    </style>
+    <style name="Rankings">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/Black</item>
+
+    </style>
+    <style name="HomeActivityStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#000000</item>
     </style>
 </resources>
