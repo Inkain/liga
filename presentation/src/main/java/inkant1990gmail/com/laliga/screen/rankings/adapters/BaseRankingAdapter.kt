@@ -4,14 +4,14 @@ import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import inkant1990.com.domain.entity.rankings.TopCards
+import inkant1990.com.domain.entity.rankings.Rankings
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.databinding.RankingsItemsBinding
 import javax.inject.Inject
 
 class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankingAdapter.Holder>() {
     private lateinit var listener: OnItemClickListener
-    private var list: List<TopCards> = mutableListOf()
+    private var list: List<Rankings> = mutableListOf()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, layoutId: Int): Holder {
@@ -26,7 +26,7 @@ class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankin
 
     }
 
-    fun setData(list: List<TopCards>) {
+    fun setData(list: List<Rankings>) {
         this.list = list
     }
 
@@ -47,7 +47,7 @@ class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankin
 
     inner class Holder(val binding: RankingsItemsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(obj: TopCards) {
+        fun bind(obj: Rankings) {
             binding.obj = obj
             binding.executePendingBindings()
         }

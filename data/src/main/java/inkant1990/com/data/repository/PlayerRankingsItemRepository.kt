@@ -6,9 +6,7 @@ import inkant1990.com.data.db.entity.DataEntity
 import inkant1990.com.data.entity.mapper.*
 import inkant1990.com.data.entity.playerRankings.RankingsResponse
 import inkant1990.com.data.repository.datasource.cloud.CloudPlayerRankingsStore
-import inkant1990.com.domain.entity.rankings.TopAssists
-import inkant1990.com.domain.entity.rankings.TopCards
-import inkant1990.com.domain.entity.rankings.TopScorers
+import inkant1990.com.domain.entity.rankings.Rankings
 import inkant1990.com.domain.repository.PlayerRankinsRepository
 import io.reactivex.Flowable
 import javax.inject.Inject
@@ -24,7 +22,7 @@ class PlayerRankingsItemRepository @Inject constructor(
     }
 
     private var lastTimeUpdate = 0L
-    override fun getScorers(): Flowable<List<TopScorers>> {
+    override fun getScorers(): Flowable<List<Rankings>> {
         return rankingsDao.getScores()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
@@ -54,7 +52,7 @@ class PlayerRankingsItemRepository @Inject constructor(
     }
 
 
-    override fun getAssists(): Flowable<List<TopAssists>> {
+    override fun getAssists(): Flowable<List<Rankings>> {
         return rankingsDao.getAssists()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
@@ -97,7 +95,7 @@ class PlayerRankingsItemRepository @Inject constructor(
 
     }
 
-    override fun getReds(): Flowable<List<TopCards>> {
+    override fun getReds(): Flowable<List<Rankings>> {
         return rankingsDao.getReds()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
@@ -124,7 +122,7 @@ class PlayerRankingsItemRepository @Inject constructor(
             }
     }
 
-    override fun getYellows(): Flowable<List<TopCards>> {
+    override fun getYellows(): Flowable<List<Rankings>> {
         return rankingsDao.getYellows()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {

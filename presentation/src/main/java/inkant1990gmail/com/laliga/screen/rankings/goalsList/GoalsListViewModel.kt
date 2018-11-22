@@ -4,22 +4,17 @@ import android.util.Log
 import inkant1990.com.domain.interactor.GetScorersList
 import inkant1990gmail.com.laliga.base.BaseViewModel
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
+import inkant1990gmail.com.laliga.screen.rankings.adapters.BaseRankingAdapter
 import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class GoalsListViewModel @Inject constructor(
     private val getScorersList: GetScorersList,
-    val adapter: GoalsListAdapter
+    val adapter: BaseRankingAdapter
 ) : BaseViewModel<HomeRouter>() {
 
 
     init {
-
-        adapter.setOnItemClickListener(object : GoalsListAdapter.OnItemClickListener {
-            override fun onClick(id: String) {
-                Log.v("myLogs", "ГОлы клик")
-            }
-        })
 
      addToDisposable(getScorersList.execute(Unit).subscribeBy(
             onNext = {

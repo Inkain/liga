@@ -24,7 +24,7 @@ interface RankingsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAssists(standingsDb: List<TopAssistsDb>)
 
-    @Query("SELECT * FROM TopScorersDb")
+    @Query("SELECT * FROM TopAssistsDb")
     fun getAssists(): Flowable<List<TopAssistsDb>>
 
     @Query("DELETE FROM TopAssistsDb")

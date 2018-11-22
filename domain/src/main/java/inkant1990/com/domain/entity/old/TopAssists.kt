@@ -1,4 +1,4 @@
-package inkant1990.com.domain.entity.rankings
+package inkant1990.com.domain.entity.old
 
 import inkant1990.com.domain.entity.Entity
 

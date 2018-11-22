@@ -6,10 +6,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseMvvmFragment
-import inkant1990gmail.com.laliga.databinding.GoalsListFragmentBinding
+import inkant1990gmail.com.laliga.databinding.RankingsListFragmentBinding
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
 
-class GoalsListFragment : BaseMvvmFragment<GoalsListViewModel, HomeRouter, GoalsListFragmentBinding>() {
+class GoalsListFragment : BaseMvvmFragment<GoalsListViewModel, HomeRouter, RankingsListFragmentBinding>() {
     companion object {
         fun getInstance(): GoalsListFragment {
             return GoalsListFragment()
@@ -26,14 +26,14 @@ class GoalsListFragment : BaseMvvmFragment<GoalsListViewModel, HomeRouter, Goals
     }
 
     override fun provideLayoutId(): Int {
-        return R.layout.goals_list_fragment
+        return R.layout.rankings_list_fragment
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recycleScorers.adapter= viewModel.adapter
-        binding.recycleScorers.layoutManager=LinearLayoutManager(context)
-        binding.recycleScorers.setHasFixedSize(true)
+        binding.recycle.adapter = viewModel.adapter
+        binding.recycle.layoutManager = LinearLayoutManager(context)
+        binding.recycle.setHasFixedSize(true)
 
     }
 }

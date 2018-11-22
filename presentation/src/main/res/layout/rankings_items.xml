@@ -2,7 +2,7 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable name="obj" type="inkant1990.com.domain.entity.rankings.TopCards"/>
+        <variable name="obj" type="inkant1990.com.domain.entity.rankings.Rankings"/>
     </data>
     <LinearLayout
             android:layout_width="match_parent"

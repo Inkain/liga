@@ -2,18 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-    >
+
         <TextView
-                android:layout_weight="0.55"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/Rank"
-                style="@style/LaligaStyleStandingsTop"
-        />
-        <TextView
-                android:layout_weight="3.3"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/player"
@@ -27,12 +18,12 @@
                 style="@style/LaligaStyleStandingsTop"
         />
         <TextView
-                android:layout_weight="0.85"
+                android:layout_weight="0.7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/value"
                 style="@style/LaligaStyleStandingsTop"
         />
-    </LinearLayout>
+    
 
 </android.support.constraint.ConstraintLayout>

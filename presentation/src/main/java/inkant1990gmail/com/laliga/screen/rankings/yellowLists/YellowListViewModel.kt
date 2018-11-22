@@ -1,7 +1,6 @@
 package inkant1990gmail.com.laliga.screen.rankings.yellowLists
 
 import android.util.Log
-import inkant1990.com.domain.interactor.GetRedsCardsList
 import inkant1990.com.domain.interactor.GetYellowCardsList
 import inkant1990gmail.com.laliga.base.BaseViewModel
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
