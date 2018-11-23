@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="obj" type="inkant1990.com.domain.entity.schedule.tournamentSchedule.Round"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView android:layout_width="0dp" android:layout_height="0dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  style="@style/LaligaStyleStandingsTop"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintHeight_percent="0.1"
+                  app:layout_constraintHeight_default="percent"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintWidth_percent="0.3"
+                  android:text="@{obj.round}"
+                  android:id="@+id/textSched"
+        />
+        <android.support.v7.widget.RecyclerView android:id="@+id/nestedRecycle"
+                                                android:layout_width="0dp"
+                                                android:layout_height="0dp"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintTop_toBottomOf="@id/textSched"
+                                                app:layout_constraintHeight_percent="0.9"
+                                                app:layout_constraintHeight_default="percent"
+                                                app:layout_constraintWidth_default="percent"
+                                                app:layout_constraintWidth_percent="1"
+
+        >
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

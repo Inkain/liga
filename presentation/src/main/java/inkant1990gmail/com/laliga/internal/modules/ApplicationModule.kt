@@ -8,9 +8,11 @@ import inkant1990.com.data.db.dao.StandingsDao
 import inkant1990.com.data.repository.PlayerRankingsItemRepository
 import inkant1990.com.data.repository.ScheduleItemRepository
 import inkant1990.com.data.repository.StandingsItemRepository
+import inkant1990.com.data.repository.TournamentScheduleItemRepository
 import inkant1990.com.domain.repository.PlayerRankinsRepository
 import inkant1990.com.domain.repository.ScheduleRepository
 import inkant1990.com.domain.repository.StandingsRepository
+import inkant1990.com.domain.repository.TournamentScheduleRepository
 import inkant1990gmail.com.laliga.AndroidApplication
 import org.jetbrains.annotations.NotNull
 import javax.inject.Singleton
@@ -44,6 +46,14 @@ class ApplicationModule(private val app: AndroidApplication) {
     @NotNull
     @Singleton
     fun scheduleRepository(scheduleItemRepository: ScheduleItemRepository): ScheduleRepository {
+
+        return scheduleItemRepository
+    }
+
+    @Provides
+    @NotNull
+    @Singleton
+    fun scheduleTournamentRepository(scheduleItemRepository: TournamentScheduleItemRepository): TournamentScheduleRepository {
 
         return scheduleItemRepository
     }

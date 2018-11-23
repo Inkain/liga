@@ -18,7 +18,7 @@ class PlayerRankingsItemRepository @Inject constructor(
     val utils: Utils
 ) : PlayerRankinsRepository {
     companion object {
-        const val TIME_BUFER = 5000
+        const val TIME_BUFER = 50000
     }
 
     private var lastTimeUpdate = 0L

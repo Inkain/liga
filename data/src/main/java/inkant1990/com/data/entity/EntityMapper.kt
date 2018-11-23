@@ -1,7 +1,7 @@
 package inkant1990.com.data.entity
 
 import inkant1990.com.data.entity.dailyShedule.Response
-import inkant1990.com.domain.entity.dailySchedule.DailySchedule
+import inkant1990.com.domain.entity.schedule.dailySchedule.DailySchedule
 
 fun Response.transform(): MutableCollection<DailySchedule> {
     val list: MutableCollection<DailySchedule> = mutableListOf()

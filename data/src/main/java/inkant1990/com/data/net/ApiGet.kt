@@ -2,8 +2,8 @@ package inkant1990.com.data.net
 
 import inkant1990.com.data.entity.playerRankings.RankingsResponse
 import inkant1990.com.data.entity.standing.Response
+import inkant1990.com.data.entity.tornamentSchedule.ScheduleResponse
 import io.reactivex.Flowable
-import io.reactivex.Observable
 import javax.inject.Inject
 
 class ApiGet @Inject constructor() {
@@ -17,8 +17,12 @@ class ApiGet @Inject constructor() {
         return api.getPlayerRankings()
     }
 
-    fun getDailyScheduleData():Flowable<inkant1990.com.data.entity.dailyShedule.Response>{
-        return  api.getDailySchedule()
+    fun getDailyScheduleData(): Flowable<inkant1990.com.data.entity.dailyShedule.Response> {
+        return api.getDailySchedule()
+    }
+
+    fun getTournamentSchedule(): Flowable<ScheduleResponse> {
+        return api.getTournamentSchedule()
     }
 
 }

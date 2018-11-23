@@ -2,6 +2,9 @@ package inkant1990gmail.com.laliga.screen.home
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import com.jakewharton.rxbinding2.view.pressed
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseMvvmActivity
 import inkant1990gmail.com.laliga.databinding.HomeActivityBinding
@@ -24,6 +27,13 @@ class HomeActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        router.goToTable()
+        val btTa =findViewById<View>(R.id.btTable)
+
+
+
+
+
+
+       router.goToTable()
     }
 }

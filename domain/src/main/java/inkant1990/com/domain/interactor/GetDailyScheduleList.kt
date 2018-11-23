@@ -1,6 +1,6 @@
 package inkant1990.com.domain.interactor
 
-import inkant1990.com.domain.entity.dailySchedule.DailySchedule
+import inkant1990.com.domain.entity.schedule.dailySchedule.DailySchedule
 import inkant1990.com.domain.repository.ScheduleRepository
 import javax.inject.Inject
 

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
->
+        xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="obj" type="inkant1990.com.domain.entity.schedule.dailySchedule.DailySchedule"/>
+        <variable name="obj" type="inkant1990.com.domain.entity.schedule.tournamentSchedule.Competitors"/>
     </data>
-    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
-                                                 android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
         <ImageView
                 android:id="@+id/homeTeamLog"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintWidth_default="percent"
-                app:layout_constraintWidth_percent="0.3"
-                android:src="@{obj.idHome}"
+                app:layout_constraintWidth_percent="0.25"
+                android:src="@{obj.teamIdAway}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginTop="16dp" android:layout_marginStart="30dp"/>
@@ -24,10 +25,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintWidth_default="percent"
-                app:layout_constraintWidth_percent="0.3"
-                android:src="@{obj.idAway}"
+                app:layout_constraintWidth_percent="0.25"
+                android:src="@{obj.teamIdAwayHome}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="16dp" android:layout_marginEnd="30dp"/>
@@ -36,20 +37,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Rankings"
+                android:textSize="7sp"
                 app:layout_constraintBottom_toBottomOf="@id/homeTeamLog"
                 app:layout_constraintTop_toTopOf="@id/homeTeamLog"
                 app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
                 app:layout_constraintRight_toRightOf="@id/awayTeamLog"
-                android:text="@{obj.time}"
+                android:text="@{obj.scheduled}"
         />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Rankings"
+                android:textSize="11sp"
                 app:layout_constraintTop_toBottomOf="@id/time"
                 app:layout_constraintLeft_toLeftOf="@id/time"
                 app:layout_constraintRight_toRightOf="@id/time"
-                android:text="@{obj.stadium}"
+                android:text="@{obj.name}"
         />
         <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +61,7 @@
                 app:layout_constraintTop_toBottomOf="@id/homeTeamLog"
                 app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
                 app:layout_constraintRight_toRightOf="@id/homeTeamLog"
-                android:text="@{obj.homeTeam}"
+                android:text="@{obj.teamNameAway}"
         />
         <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +70,8 @@
                 app:layout_constraintTop_toBottomOf="@id/awayTeamLog"
                 app:layout_constraintLeft_toLeftOf="@id/awayTeamLog"
                 app:layout_constraintRight_toRightOf="@id/awayTeamLog"
-                android:text="@{obj.awayTeam}"
+                android:text="@{obj.teamNameHome}"
         />
+
     </android.support.constraint.ConstraintLayout>
 </layout>

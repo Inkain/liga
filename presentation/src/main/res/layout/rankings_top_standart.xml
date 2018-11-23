@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
-        <TextView
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/player"
-                style="@style/LaligaStyleStandingsTop"
-        />
-        <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/team"
-                style="@style/LaligaStyleStandingsTop"
-        />
-        <TextView
-                android:layout_weight="0.7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/value"
-                style="@style/LaligaStyleStandingsTop"
-        />
-    
+    <TextView
+            android:id="@+id/play"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/player"
+            style="@style/LaligaStyleStandingsTop"
+    />
+    <TextView
+            android:id="@+id/club"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/play"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/team"
+            style="@style/LaligaStyleStandingsTop"
+    />
+    <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/club"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/value"
+            style="@style/LaligaStyleStandingsTop"
+    />
+
 
 </android.support.constraint.ConstraintLayout>

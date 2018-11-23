@@ -5,6 +5,7 @@ import dagger.Provides
 import inkant1990.com.data.db.AppDataBase
 import inkant1990.com.data.db.dao.RankingsDao
 import inkant1990.com.data.db.dao.StandingsDao
+import inkant1990.com.data.db.dao.TournamentScheduleDao
 import inkant1990gmail.com.laliga.AndroidApplication
 import javax.inject.Singleton
 
@@ -25,6 +26,11 @@ class RoomModule {
 
         return AppDataBase.getInstance(AndroidApplication.instance.applicationContext).getRankingsDao()
     }
+    @Provides
+    @Singleton
+    fun tournamentScheduleDao(): TournamentScheduleDao {
 
+        return AppDataBase.getInstance(AndroidApplication.instance.applicationContext).getTournamentScheduleDao()
+    }
 
 }
