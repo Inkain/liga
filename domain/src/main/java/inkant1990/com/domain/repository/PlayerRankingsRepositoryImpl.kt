@@ -4,7 +4,7 @@ import inkant1990.com.domain.entity.rankings.Rankings
 import io.reactivex.Flowable
 
 
-interface PlayerRankinsRepository {
+interface PlayerRankingsRepositoryImpl {
     fun getScorers(): Flowable<List<Rankings>>
     fun getAssists(): Flowable<List<Rankings>>
     fun getYellows(): Flowable<List<Rankings>>

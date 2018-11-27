@@ -1,18 +1,19 @@
 package inkant1990.com.domain.interactor
 
 import inkant1990.com.domain.entity.standings.TeamStandings
-import inkant1990.com.domain.repository.StandingsRepository
+import inkant1990.com.domain.executor.PostExecutorThread
+import inkant1990.com.domain.repository.StandingsRepositoryImpl
 import io.reactivex.Flowable
-import io.reactivex.Observable
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import javax.inject.Singleton
 
 
-class GetStandingsList @Inject constructor(val standingsRepository: StandingsRepository) :
-    UseCase<List<TeamStandings>, Unit>() {
+class GetStandingsList @Inject constructor(
+    val standingsRepositoryImpl: StandingsRepositoryImpl,
+    postExecutorThread: PostExecutorThread
+) :
+    UseCase<List<TeamStandings>, Unit>(postExecutorThread) {
 
     override fun buildUseCaseObservable(params: Unit): Flowable<List<TeamStandings>> {
-        return standingsRepository.standingsItem()
+        return standingsRepositoryImpl.standingsItem()
     }
 }

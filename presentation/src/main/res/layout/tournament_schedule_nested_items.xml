@@ -7,9 +7,9 @@
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp">
+            android:layout_marginBottom="5dp">
         <ImageView
-                android:id="@+id/homeTeamLog"
+                android:id="@+id/imgHomeTeamLogo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_default="percent"
@@ -21,7 +21,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginTop="16dp" android:layout_marginStart="30dp"/>
         <ImageView
-                android:id="@+id/awayTeamLog"
+                android:id="@+id/imgAwayTeamLogo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintHeight_default="percent"
@@ -33,15 +33,15 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginTop="16dp" android:layout_marginEnd="30dp"/>
         <TextView
-                android:id="@+id/time"
+                android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/LaligaStyleStandingsTop"
                 android:textSize="7sp"
-                app:layout_constraintBottom_toBottomOf="@id/homeTeamLog"
-                app:layout_constraintTop_toTopOf="@id/homeTeamLog"
-                app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
-                app:layout_constraintRight_toRightOf="@id/awayTeamLog"
+                app:layout_constraintBottom_toBottomOf="@id/imgHomeTeamLogo"
+                app:layout_constraintTop_toTopOf="@id/imgHomeTeamLogo"
+                app:layout_constraintLeft_toLeftOf="@id/imgHomeTeamLogo"
+                app:layout_constraintRight_toRightOf="@id/imgAwayTeamLogo"
                 android:text="@{obj.scheduled}"
         />
         <TextView
@@ -49,27 +49,27 @@
                 android:layout_height="wrap_content"
                 style="@style/LaligaStyleStandingsTop"
                 android:textSize="11sp"
-                app:layout_constraintTop_toBottomOf="@id/time"
-                app:layout_constraintLeft_toLeftOf="@id/time"
-                app:layout_constraintRight_toRightOf="@id/time"
+                app:layout_constraintTop_toBottomOf="@id/tvTime"
+                app:layout_constraintLeft_toLeftOf="@id/tvTime"
+                app:layout_constraintRight_toRightOf="@id/tvTime"
                 android:text="@{obj.name}"
         />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/LaligaStyleStandingsTop"
-                app:layout_constraintTop_toBottomOf="@id/homeTeamLog"
-                app:layout_constraintLeft_toLeftOf="@id/homeTeamLog"
-                app:layout_constraintRight_toRightOf="@id/homeTeamLog"
+                app:layout_constraintTop_toBottomOf="@id/imgHomeTeamLogo"
+                app:layout_constraintLeft_toLeftOf="@id/imgHomeTeamLogo"
+                app:layout_constraintRight_toRightOf="@id/imgHomeTeamLogo"
                 android:text="@{obj.teamNameAway}"
         />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/LaligaStyleStandingsTop"
-                app:layout_constraintTop_toBottomOf="@id/awayTeamLog"
-                app:layout_constraintLeft_toLeftOf="@id/awayTeamLog"
-                app:layout_constraintRight_toRightOf="@id/awayTeamLog"
+                app:layout_constraintTop_toBottomOf="@id/imgAwayTeamLogo"
+                app:layout_constraintLeft_toLeftOf="@id/imgAwayTeamLogo"
+                app:layout_constraintRight_toRightOf="@id/imgAwayTeamLogo"
                 android:text="@{obj.teamNameHome}"
         />
 

@@ -5,7 +5,7 @@
                                              android:layout_height="wrap_content">
 
     <TextView
-            android:id="@+id/play"
+            android:id="@+id/tvPlay"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintWidth_percent="0.6"
@@ -18,9 +18,9 @@
             style="@style/LaligaStyleStandingsTop"
     />
     <TextView
-            android:id="@+id/club"
+            android:id="@+id/tvClub"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/play"
+            app:layout_constraintLeft_toRightOf="@id/tvPlay"
             app:layout_constraintWidth_percent="0.2"
             app:layout_constraintWidth_default="percent"
             app:layout_constraintHeight_default="percent"
@@ -32,7 +32,7 @@
     />
     <TextView
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/club"
+            app:layout_constraintLeft_toRightOf="@id/tvClub"
             app:layout_constraintWidth_percent="0.2"
             app:layout_constraintWidth_default="percent"
             app:layout_constraintHeight_default="percent"

@@ -8,7 +8,6 @@ import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseMvvmFragment
 import inkant1990gmail.com.laliga.databinding.TeamListFragmentBinding
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
-import inkant1990gmail.com.laliga.screen.teamProfile.TeamProfileFragment
 
 class TeamListFragment : BaseMvvmFragment<TeamListViewModel, HomeRouter, TeamListFragmentBinding>() {
 

@@ -6,16 +6,16 @@ import inkant1990.com.data.entity.mapper.transformToDb
 import inkant1990.com.data.entity.mapper.transformToDomain
 import inkant1990.com.data.repository.datasource.cloud.CloudStandingsStore
 import inkant1990.com.domain.entity.standings.TeamStandings
-import inkant1990.com.domain.repository.StandingsRepository
+import inkant1990.com.domain.repository.StandingsRepositoryImpl
 import io.reactivex.Flowable
 import javax.inject.Inject
 
-class StandingsItemRepository @Inject constructor(
+class StandingsItemRepositoryImpl @Inject constructor(
     val cloud: CloudStandingsStore,
     val standingsDao: StandingsDao,
     val utils: Utils
 ) :
-    StandingsRepository {
+    StandingsRepositoryImpl {
     companion object {
         const val TIME_BUFER = 50000
         private var lastTimeUpdate = 0L

@@ -9,14 +9,14 @@ import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class GoalsListViewModel @Inject constructor(
-    private val getScorersList: GetScorersList,
+    getData: GetScorersList,
     val adapter: BaseRankingAdapter
 ) : BaseViewModel<HomeRouter>() {
 
 
     init {
 
-     addToDisposable(getScorersList.execute(Unit).subscribeBy(
+     addToDisposable(getData.execute(Unit).subscribeBy(
             onNext = {
                 adapter.setData(it)
                 adapter.notifyDataSetChanged()

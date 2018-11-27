@@ -30,9 +30,4 @@ class TeamProfileFragment : BaseMvvmFragment<TeamProfileViewModel, HomeRouter, T
         return R.layout.team_profile_fragment
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
 }

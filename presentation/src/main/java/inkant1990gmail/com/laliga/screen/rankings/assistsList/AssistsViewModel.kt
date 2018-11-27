@@ -9,13 +9,13 @@ import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class AssistsViewModel @Inject constructor(
-    private val getAssistsList: GetAssistsList,
+    getData: GetAssistsList,
     val adapter: BaseRankingAdapter
 ) : BaseViewModel<HomeRouter>() {
 
     init {
 
-        addToDisposable(getAssistsList.execute(Unit).subscribeBy(
+        addToDisposable(getData.execute(Unit).subscribeBy(
             onNext = {
                 it.forEach {
                     Log.v("myLogs", it.value.toString()+ it.playerName)

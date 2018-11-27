@@ -31,7 +31,7 @@ class YellowListFragment : BaseMvvmFragment<YellowListViewModel, HomeRouter, Ran
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recycle.adapter=viewModel.adapter
+        binding.recycle.adapter = viewModel.adapter
         binding.recycle.layoutManager = LinearLayoutManager(context)
         binding.recycle.setHasFixedSize(true)
 

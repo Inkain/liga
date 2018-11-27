@@ -1,4 +1,4 @@
-package inkant1990.com.data.entity
+package inkant1990.com.data.entity.mapper
 
 import inkant1990.com.data.entity.dailyShedule.Response
 import inkant1990.com.domain.entity.schedule.dailySchedule.DailySchedule

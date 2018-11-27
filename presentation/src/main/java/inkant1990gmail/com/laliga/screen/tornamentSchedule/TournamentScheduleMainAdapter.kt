@@ -13,8 +13,7 @@ import javax.inject.Inject
 
 class TournamentScheduleMainAdapter @Inject constructor() :
     RecyclerView.Adapter<TournamentScheduleMainAdapter.Holder>() {
-    private var list:MutableList<Round> = mutableListOf()
-    private lateinit var listener: OnItemClickListener
+    private var list: MutableList<Round> = mutableListOf()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): Holder {
         val layoutInflater = LayoutInflater.from(p0.getContext())
@@ -41,22 +40,14 @@ class TournamentScheduleMainAdapter @Inject constructor() :
         holder.bind(list.elementAt(position))
     }
 
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
-    }
-
-    interface OnItemClickListener {
-        fun onClick(id: String)
-    }
-
 
     inner class Holder(
         val binding: TournamentScheduleMainItemsBinding
 
-        ) : RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(obj: Round) {
-           val nested =TournamentScheduleNestedAdapter()
+            val nested = TournamentScheduleNestedAdapter()
             nested.setData(obj.list)
             binding.nestedRecycle.adapter = nested
             binding.nestedRecycle.layoutManager = LinearLayoutManager(AndroidApplication.instance.applicationContext)

@@ -1,11 +1,10 @@
 package inkant1990.com.data.entity.mapper
 
-import android.util.Log
 import inkant1990.com.data.db.entity.TournamentScheduleDb
 import inkant1990.com.data.db.entity.TournamentScheduleRoundDb
 import inkant1990.com.data.entity.tornamentSchedule.Schedule
 import inkant1990.com.data.entity.tornamentSchedule.ScheduleResponse
-import inkant1990.com.data.entity.tornamentSchedule.SportEventsItem
+import inkant1990.com.data.entity.SportEventsItem
 import inkant1990.com.domain.entity.schedule.tournamentSchedule.Competitors
 import inkant1990.com.domain.entity.schedule.tournamentSchedule.Round
 

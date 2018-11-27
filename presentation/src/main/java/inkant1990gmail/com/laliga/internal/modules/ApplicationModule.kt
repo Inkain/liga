@@ -4,8 +4,10 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import inkant1990.com.data.repository.*
+import inkant1990.com.domain.executor.PostExecutorThread
 import inkant1990.com.domain.repository.*
 import inkant1990gmail.com.laliga.AndroidApplication
+import inkant1990gmail.com.laliga.executor.UIThread
 import org.jetbrains.annotations.NotNull
 import javax.inject.Singleton
 
@@ -21,7 +23,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun standingsRepository(standingsItemRepository: StandingsItemRepository): StandingsRepository {
+    fun standingsRepository(standingsItemRepository: StandingsItemRepositoryImpl): StandingsRepositoryImpl {
 
         return standingsItemRepository
     }
@@ -29,7 +31,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun rankingsRepository(playerRankinsRepository: PlayerRankingsItemRepository): PlayerRankinsRepository {
+    fun rankingsRepository(playerRankinsRepository: PlayerRankingsItemRepository): PlayerRankingsRepositoryImpl {
 
         return playerRankinsRepository
     }
@@ -37,7 +39,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun scheduleRepository(scheduleItemRepository: ScheduleItemRepository): ScheduleRepository {
+    fun scheduleRepository(scheduleItemRepository: ScheduleItemRepository): ScheduleRepositoryImpl {
 
         return scheduleItemRepository
     }
@@ -45,16 +47,25 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun scheduleTournamentRepository(scheduleItemRepository: TournamentScheduleItemRepository): TournamentScheduleRepository {
+    fun scheduleTournamentRepository(scheduleItemRepository: TournamentScheduleItemRepositoryImpl): TournamentScheduleRepositoryImpl {
 
         return scheduleItemRepository
     }
+
     @Provides
     @NotNull
     @Singleton
     fun teamListRepository(repository: TeamListRepository): TeamListRepositoryImpl {
 
         return repository
+    }
+
+    @Provides
+    @NotNull
+    @Singleton
+    fun uiThread(thread: UIThread): PostExecutorThread {
+
+        return thread
     }
 
 

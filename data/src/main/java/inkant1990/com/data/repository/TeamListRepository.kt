@@ -24,7 +24,7 @@ class TeamListRepository @Inject constructor(
     override fun getTeamList(): Flowable<List<Team>> {
         return dao.get()
             .flatMap { dbList ->
-                if ((dbList.isEmpty() || utils.getTime() - lastTimeUpdate > TIME_BUFER) && utils.getCoonect()) {
+                if ((dbList.isEmpty() || (utils.getTime() - lastTimeUpdate) > TIME_BUFER) && utils.getCoonect()) {
                     cloud.getData()
                         .doOnNext {
                             lastTimeUpdate = utils.getTime()

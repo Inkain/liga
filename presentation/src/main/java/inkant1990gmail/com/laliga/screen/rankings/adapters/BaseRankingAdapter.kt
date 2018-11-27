@@ -22,8 +22,6 @@ class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankin
 
     override fun getItemCount(): Int {
         return list.size
-
-
     }
 
     fun setData(list: List<Rankings>) {

@@ -9,7 +9,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class RedListViewModel @Inject constructor(
-    private val getList: GetRedsCardsList,
+    getData: GetRedsCardsList,
     val adapter: BaseRankingAdapter
 ) : BaseViewModel<HomeRouter>() {
 
@@ -17,12 +17,12 @@ class RedListViewModel @Inject constructor(
     init {
 
 
-        addToDisposable(getList.execute(Unit).subscribeBy(
+        addToDisposable(getData.execute(Unit).subscribeBy(
             onNext = {
                 adapter.setData(it)
                 adapter.notifyDataSetChanged()
             }
-            , onError = { Log.v("myLogs", it.message+"cardR") })
+            , onError = { Log.v("myLogs", it.message + "cardR") })
         )
     }
 }

@@ -8,7 +8,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class StandingsListViewModel @Inject constructor(
-    getStandingsList: GetStandingsList,
+    getData: GetStandingsList,
     val adapter: StandingsListAdapter
 ) : BaseViewModel<HomeRouter>() {
 
@@ -19,15 +19,13 @@ class StandingsListViewModel @Inject constructor(
             }
         })
 
-          addToDisposable(getStandingsList.execute(Unit).subscribeBy(
+        addToDisposable(getData.execute(Unit).subscribeBy(
             onNext = {
                 adapter.setData(it)
                 adapter.notifyDataSetChanged()
             }
-          ,onError = {Log.v("myLogs",it.cause.toString())}
+            , onError = { Log.v("myLogs", it.cause.toString()) }
         )
         )
-
     }
-
 }

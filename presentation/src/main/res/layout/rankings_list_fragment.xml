@@ -6,7 +6,7 @@
                                                  android:layout_height="match_parent">
 
         <include layout="@layout/rankings_top_standart"
-                 android:id="@+id/linera"
+                 android:id="@+id/inOuterLayout"
                  android:layout_height="0dp"
                  android:layout_width="match_parent"
                  app:layout_constraintHeight_percent="0.08"
@@ -16,7 +16,7 @@
 
 
         <android.support.v7.widget.RecyclerView
-                app:layout_constraintTop_toBottomOf="@+id/linera"
+                app:layout_constraintTop_toBottomOf="@+id/inOuterLayout"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:id="@+id/recycle"
                 app:layout_constraintHeight_default="percent"

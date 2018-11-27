@@ -8,11 +8,11 @@ import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
 class DailyScheduleViewModel @Inject constructor(
-    getDailyScheduleList: GetDailyScheduleList,
+    getData: GetDailyScheduleList,
     val adapter: DailyScheduleAdapter
 ) : BaseViewModel<HomeRouter>() {
     init {
-        addToDisposable(getDailyScheduleList.execute(Unit).subscribeBy {
+        addToDisposable(getData.execute(Unit).subscribeBy {
            it.forEach {
                Log.v("myLogs",it.toString())
            }

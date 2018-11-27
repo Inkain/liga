@@ -27,7 +27,6 @@ class DailyScheduleFragment : BaseMvvmFragment<DailyScheduleViewModel, HomeRoute
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.recycleDailySchedule.adapter = viewModel.adapter
         binding.recycleDailySchedule.layoutManager = LinearLayoutManager(context)
         binding.recycleDailySchedule.setHasFixedSize(true)

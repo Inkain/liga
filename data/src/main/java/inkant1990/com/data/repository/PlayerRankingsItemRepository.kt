@@ -7,7 +7,7 @@ import inkant1990.com.data.entity.mapper.*
 import inkant1990.com.data.entity.playerRankings.RankingsResponse
 import inkant1990.com.data.repository.datasource.cloud.CloudPlayerRankingsStore
 import inkant1990.com.domain.entity.rankings.Rankings
-import inkant1990.com.domain.repository.PlayerRankinsRepository
+import inkant1990.com.domain.repository.PlayerRankingsRepositoryImpl
 import io.reactivex.Flowable
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class PlayerRankingsItemRepository @Inject constructor(
     val cloud: CloudPlayerRankingsStore,
     val rankingsDao: RankingsDao,
     val utils: Utils
-) : PlayerRankinsRepository {
+) : PlayerRankingsRepositoryImpl {
     companion object {
         const val TIME_BUFER = 50000
         private var lastTimeUpdate = 0L

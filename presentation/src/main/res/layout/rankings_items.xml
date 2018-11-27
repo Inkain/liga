@@ -10,21 +10,21 @@
             android:orientation="horizontal"
     android:layout_marginBottom="5dp">
 
-        <TextView android:id="@+id/Name"
+        <TextView android:id="@+id/tvName"
                     android:text="@{obj.playerName}"
                   android:layout_weight="2"
                   style="@style/Rankings"
                   android:layout_width="0dp"
                   android:layout_height="wrap_content"
         />
-        <ImageView android:id="@+id/scorerTeamName"
+        <ImageView android:id="@+id/imgScorerTeamLogo"
                    android:layout_weight="1"
                    style="@style/Rankings"
                    android:src="@{obj.teamId}"
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
         />
-        <TextView android:id="@+id/Points"
+        <TextView android:id="@+id/tvPoints"
                   android:layout_weight="0.7"
                   android:text="@{obj.value.toString()}"
                   style="@style/Rankings"

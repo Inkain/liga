@@ -8,15 +8,15 @@ import inkant1990.com.data.entity.mapper.transformToScheduleDb
 import inkant1990.com.data.entity.mapper.transformToScheduleToDomain
 import inkant1990.com.data.repository.datasource.cloud.CloudTournamentScheduleStore
 import inkant1990.com.domain.entity.schedule.tournamentSchedule.Round
-import inkant1990.com.domain.repository.TournamentScheduleRepository
+import inkant1990.com.domain.repository.TournamentScheduleRepositoryImpl
 import io.reactivex.Flowable
 import javax.inject.Inject
 
-class TournamentScheduleItemRepository @Inject constructor(
+class TournamentScheduleItemRepositoryImpl @Inject constructor(
     val cloud: CloudTournamentScheduleStore,
     val dao: TournamentScheduleDao,
     val utils: Utils
-) : TournamentScheduleRepository {
+) : TournamentScheduleRepositoryImpl {
     companion object {
         const val TIME_BUFER = 50000
         private var lastTimeUpdate = 0L

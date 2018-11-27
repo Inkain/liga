@@ -22,7 +22,6 @@ class DailyScheduleAdapter @Inject constructor() : RecyclerView.Adapter<DailySch
 
     fun setData(list: MutableCollection<DailySchedule>) {
         this.list = list
-
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +36,7 @@ class DailyScheduleAdapter @Inject constructor() : RecyclerView.Adapter<DailySch
     inner class Holder(val binding: DailyScheduleItemsBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(obj: DailySchedule) {
-           
+
         }
     }
 }

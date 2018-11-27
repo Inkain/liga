@@ -1,9 +1,7 @@
 package inkant1990.com.data.entity
 
 import com.google.gson.annotations.SerializedName
-import javax.annotation.Generated
 
-@Generated("com.robohorse.robopojogenerator")
 data class Tournament(
 
     @field:SerializedName("current_season")
