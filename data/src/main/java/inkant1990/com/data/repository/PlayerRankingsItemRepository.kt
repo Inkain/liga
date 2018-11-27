@@ -19,9 +19,9 @@ class PlayerRankingsItemRepository @Inject constructor(
 ) : PlayerRankinsRepository {
     companion object {
         const val TIME_BUFER = 50000
+        private var lastTimeUpdate = 0L
     }
 
-    private var lastTimeUpdate = 0L
     override fun getScorers(): Flowable<List<Rankings>> {
         return rankingsDao.getScores()
             .flatMap { dbList ->

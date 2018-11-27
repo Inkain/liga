@@ -11,6 +11,7 @@ import inkant1990gmail.com.laliga.screen.rankings.goalsList.GoalsListViewModel
 import inkant1990gmail.com.laliga.screen.rankings.redsList.RedListViewModel
 import inkant1990gmail.com.laliga.screen.rankings.yellowLists.YellowListViewModel
 import inkant1990gmail.com.laliga.screen.standings.StandingsListViewModel
+import inkant1990gmail.com.laliga.screen.teamList.TeamListViewModel
 import inkant1990gmail.com.laliga.screen.tornamentSchedule.ScheduleViewModel
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelFactory
 import inkant1990gmail.com.laliga.viewModelFactory.ViewModelKey
@@ -57,6 +58,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RedListViewModel::class)
     abstract fun redListViewModel(viewModel: RedListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TeamListViewModel::class)
+    abstract fun teamListViewModel(viewModel: TeamListViewModel): ViewModel
 
 
 }

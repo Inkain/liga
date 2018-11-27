@@ -20,4 +20,8 @@ class HomeViewModel
         router?.goToSchedule()
     }
 
+    fun goToClubList(){
+        router?.goToClubList()
+    }
+
 }

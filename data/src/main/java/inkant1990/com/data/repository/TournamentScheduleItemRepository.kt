@@ -19,9 +19,9 @@ class TournamentScheduleItemRepository @Inject constructor(
 ) : TournamentScheduleRepository {
     companion object {
         const val TIME_BUFER = 50000
+        private var lastTimeUpdate = 0L
     }
 
-    private var lastTimeUpdate = 0L
     override fun getTournamentSchedule(): Flowable<List<Round>> {
         return dao.getRounds().flatMap { dbList ->
             if ((dbList.isEmpty() || utils.getTime() - lastTimeUpdate > TIME_BUFER) && utils.getCoonect()) {

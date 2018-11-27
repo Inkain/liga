@@ -11,7 +11,7 @@ import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.databinding.TournamentScheduleMainItemsBinding
 import javax.inject.Inject
 
-class TournamentScheduleMainAdapter @Inject constructor(val nested: TournamentScheduleNestedAdapter) :
+class TournamentScheduleMainAdapter @Inject constructor() :
     RecyclerView.Adapter<TournamentScheduleMainAdapter.Holder>() {
     private var list:MutableList<Round> = mutableListOf()
     private lateinit var listener: OnItemClickListener
@@ -49,12 +49,14 @@ class TournamentScheduleMainAdapter @Inject constructor(val nested: TournamentSc
         fun onClick(id: String)
     }
 
+
     inner class Holder(
         val binding: TournamentScheduleMainItemsBinding
 
         ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(obj: Round) {
+           val nested =TournamentScheduleNestedAdapter()
             nested.setData(obj.list)
             binding.nestedRecycle.adapter = nested
             binding.nestedRecycle.layoutManager = LinearLayoutManager(AndroidApplication.instance.applicationContext)

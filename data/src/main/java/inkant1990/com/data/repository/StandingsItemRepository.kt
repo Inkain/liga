@@ -1,6 +1,5 @@
 package inkant1990.com.data.repository
 
-import android.util.Log
 import inkant1990.com.data.db.dao.StandingsDao
 import inkant1990.com.data.entity.mapper.transform
 import inkant1990.com.data.entity.mapper.transformToDb
@@ -19,9 +18,10 @@ class StandingsItemRepository @Inject constructor(
     StandingsRepository {
     companion object {
         const val TIME_BUFER = 50000
+        private var lastTimeUpdate = 0L
     }
 
-    private var lastTimeUpdate = 0L
+
     override fun standingsItem(): Flowable<List<TeamStandings>> {
         return standingsDao.get()
             .flatMap { standingsDbList ->

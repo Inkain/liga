@@ -11,6 +11,7 @@ import inkant1990gmail.com.laliga.screen.rankings.goalsList.GoalsListFragment
 import inkant1990gmail.com.laliga.screen.rankings.redsList.RedListFragment
 import inkant1990gmail.com.laliga.screen.rankings.yellowLists.YellowListFragment
 import inkant1990gmail.com.laliga.screen.standings.StandingsListFragment
+import inkant1990gmail.com.laliga.screen.teamList.TeamListFragment
 import inkant1990gmail.com.laliga.screen.tornamentSchedule.ScheduleFragment
 import javax.inject.Singleton
 
@@ -26,6 +27,7 @@ interface ApplicationComponent {
     fun inject(app: DailyScheduleFragment)
     fun inject(app: YellowListFragment)
     fun inject(app: RedListFragment)
+    fun inject(app: TeamListFragment)
 
 }
 

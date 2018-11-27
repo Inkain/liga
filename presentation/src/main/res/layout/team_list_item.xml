@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="obj" type="inkant1990.com.domain.entity.Team"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+
+    >
+        <ImageView android:id="@+id/imgIconTeam"
+                   android:layout_width="0dp"
+                   android:layout_height="0dp"
+                   app:layout_constraintWidth_default="percent"
+                   app:layout_constraintHeight_default="percent"
+                   app:layout_constraintWidth_percent="0.2"
+                   app:layout_constraintHeight_percent="0.8"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   style="@style/LaligaStyleStandingsTop"
+                   android:src="@{obj.id}"
+
+        />
+        <TextView android:id="@+id/tvTeamName"
+                  android:text="@{obj.name}"
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintHeight_default="percent"
+                  app:layout_constraintWidth_percent="0.6"
+                  app:layout_constraintHeight_percent="1"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:gravity="fill_vertical"
+                  app:layout_constraintStart_toEndOf="@id/imgIconTeam"
+                  style="@style/LaligaStyleStandingsTop"
+        />
+        <ImageView android:id="@+id/imgGoTeam"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintWidth_default="percent"
+                   app:layout_constraintHeight_default="percent"
+                   app:layout_constraintWidth_percent="0.2"
+                   app:layout_constraintHeight_percent="0.10"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintLeft_toRightOf="@id/tvTeamName"
+                   style="@style/LaligaStyleStandingsTop"
+                   android:src="@drawable/forward"
+
+        />
+    </android.support.constraint.ConstraintLayout>
+</layout>

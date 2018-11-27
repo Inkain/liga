@@ -71,7 +71,7 @@
                 app:layout_constraintWidth_default="percent"
                 android:layout_height="0dp"
                 style="@style/HomeActivityStyle"
-                android:onClick="@{(v) -> viewModel.goToSchedule(v)}"
+                android:onClick="@{() -> viewModel.goToClubList()}"
                 android:text="@string/clubs"/>
 
 

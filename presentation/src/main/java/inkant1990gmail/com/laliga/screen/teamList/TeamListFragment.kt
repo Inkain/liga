@@ -1,4 +1,4 @@
-package inkant1990gmail.com.laliga.screen.tornamentSchedule
+package inkant1990gmail.com.laliga.screen.teamList
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,20 +6,24 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseMvvmFragment
-import inkant1990gmail.com.laliga.databinding.ScheduleFragmentBinding
+import inkant1990gmail.com.laliga.databinding.TeamListFragmentBinding
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
+import inkant1990gmail.com.laliga.screen.teamProfile.TeamProfileFragment
 
-class ScheduleFragment : BaseMvvmFragment<ScheduleViewModel, HomeRouter, ScheduleFragmentBinding>() {
+class TeamListFragment : BaseMvvmFragment<TeamListViewModel, HomeRouter, TeamListFragmentBinding>() {
+
     companion object {
-        fun getInstance() = ScheduleFragment()
+        fun getInstance(): TeamListFragment {
+            return TeamListFragment()
+        }
     }
 
-    override fun prodiveViewModel(): ScheduleViewModel {
-        return ViewModelProviders.of(this, viewModelFactory).get(ScheduleViewModel::class.java)
+    override fun prodiveViewModel(): TeamListViewModel {
+        return ViewModelProviders.of(this, viewModelFactory).get(TeamListViewModel::class.java)
     }
 
     override fun provideLayoutId(): Int {
-        return R.layout.schedule_fragment
+        return R.layout.team_list_fragment
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +32,11 @@ class ScheduleFragment : BaseMvvmFragment<ScheduleViewModel, HomeRouter, Schedul
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
         binding.recycle.adapter = viewModel.adapter
-        binding.recycle.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.recycle.layoutManager = LinearLayoutManager(context)
         binding.recycle.setHasFixedSize(true)
-    }
 
+    }
 }

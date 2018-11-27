@@ -60,7 +60,7 @@ fun ScheduleResponse.transformToScheduleToDomain(): MutableList<Round> {
     sportEvents?.forEach {
         if (!checkInner(it?.tournamentRound?.number, list)) list.add(
             Round(
-                it?.tournamentRound?.number.toString(), nestedOperation(sportEvents, it?.tournamentRound?.number)
+               it?.tournamentRound?.number.toString(), nestedOperation(sportEvents, it?.tournamentRound?.number)
             )
         )
 
@@ -86,7 +86,6 @@ private fun nestedOperation(events: List<SportEventsItem?>, id: Int?): MutableLi
             )
         }
     }
-    Log.v("myLogs", listCompt.size.toString() + " nested")
     return listCompt
 }
 
@@ -106,8 +105,6 @@ fun Schedule.transform(): Round {
             )
         )
     }
-
-    Log.v("myLogs", listCompt.size.toString() + "x")
     return Round(round.toString(), listCompt)
 }
 
