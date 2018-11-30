@@ -38,6 +38,7 @@ class TournamentScheduleMainAdapter @Inject constructor() :
 
         }
         holder.bind(list.elementAt(position))
+
     }
 
 

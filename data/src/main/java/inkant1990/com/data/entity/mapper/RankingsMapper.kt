@@ -1,6 +1,5 @@
 package inkant1990.com.data.entity.mapper
 
-import android.util.Log
 import inkant1990.com.data.db.entity.TopAssistsDb
 import inkant1990.com.data.db.entity.TopCardsDb
 import inkant1990.com.data.db.entity.TopScorersDb
@@ -10,6 +9,7 @@ import inkant1990.com.domain.entity.rankings.Rankings
 fun TopScorersDb.transform(): Rankings {
     return Rankings(score, teamName, teamId, playerName, playerID)
 }
+
 fun RankingsResponse.transformScoreToDb(): List<TopScorersDb> {
     val scorersList: MutableList<TopScorersDb> = mutableListOf()
     topGoals?.forEach {
@@ -21,6 +21,7 @@ fun RankingsResponse.transformScoreToDb(): List<TopScorersDb> {
     }
     return scorersList
 }
+
 fun RankingsResponse.transformScoreToDomain(): List<Rankings> {
     val scorersList: MutableList<Rankings> = mutableListOf()
 
@@ -33,15 +34,16 @@ fun RankingsResponse.transformScoreToDomain(): List<Rankings> {
     }
     return scorersList
 }
+
 fun TopAssistsDb.transform(): Rankings {
-    return Rankings(assists,teamName, teamId, playerName, playerID)
+    return Rankings(assists, teamName, teamId, playerName, playerID)
 }
 
 fun RankingsResponse.transformAssistsToDb(): List<TopAssistsDb> {
     val assistsList: MutableList<TopAssistsDb> = mutableListOf()
     topAssists?.forEach {
         if (it != null && it.rank!!.toInt() <= 35) assistsList.add(
-            TopAssistsDb(it.assists,it.team?.name, it.team?.id, it.player.name, it.player.id)
+            TopAssistsDb(it.assists, it.team?.name, it.team?.id, it.player.name, it.player.id)
         )
     }
     return assistsList
@@ -56,6 +58,7 @@ fun RankingsResponse.transformAssistsToDomain(): List<Rankings> {
     }
     return assistsList
 }
+
 
 fun RankingsResponse.transformYellowsToDomain(): List<Rankings> {
     val list: MutableList<Rankings> = mutableListOf()

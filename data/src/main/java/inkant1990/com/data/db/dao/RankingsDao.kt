@@ -39,6 +39,7 @@ interface RankingsDao {
     @Query("DELETE FROM TopCardsDb")
     fun deleteCards()
 
+
     @Query("SELECT teamId,teamName,playerID,playerName,redCards FROM TopCardsDb Where redCards > 0 ORDER BY redCards DESC")
     fun getReds(): Flowable<List<TopCardsDb>>
 

@@ -14,6 +14,7 @@ fun ScheduleResponse.transformToScheduleDb(): List<TournamentScheduleDb> {
         if (it != null) {
             list.add(
                 TournamentScheduleDb(
+                    it.id!!,
                     it.tournamentRound?.number,
                     it.competitors?.get(0)?.name,
                     it.competitors?.get(0)?.id,

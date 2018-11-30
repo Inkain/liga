@@ -12,4 +12,4 @@ data class TopCardsDb(
     val playerName: String? = null,
     @PrimaryKey
     val playerID: String
-):DataEntity
+) : DataEntity

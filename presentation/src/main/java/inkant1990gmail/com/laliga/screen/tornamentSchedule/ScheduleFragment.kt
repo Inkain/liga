@@ -9,6 +9,7 @@ import inkant1990gmail.com.laliga.base.BaseMvvmFragment
 import inkant1990gmail.com.laliga.databinding.ScheduleFragmentBinding
 import inkant1990gmail.com.laliga.screen.home.HomeRouter
 
+
 class ScheduleFragment : BaseMvvmFragment<ScheduleViewModel, HomeRouter, ScheduleFragmentBinding>() {
     companion object {
         fun getInstance() = ScheduleFragment()
@@ -32,6 +33,8 @@ class ScheduleFragment : BaseMvvmFragment<ScheduleViewModel, HomeRouter, Schedul
         binding.recycle.adapter = viewModel.adapter
         binding.recycle.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recycle.setHasFixedSize(true)
+        var helper = CenterSnapHelper()
+        helper.attachToRecyclerView(binding.recycle)
     }
 
 }

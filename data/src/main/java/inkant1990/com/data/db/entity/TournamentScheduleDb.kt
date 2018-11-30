@@ -7,7 +7,8 @@ import android.arch.persistence.room.PrimaryKey
 @Entity()
 data class TournamentScheduleDb(
     @PrimaryKey
-    val roundOwner: Int?,
+    val comp:String,
+    val roundOwner: Int?=null,
     val teamNameAway: String? = null,
     val teamIdAway: String? = null,
     val teamNameHome: String? = null,
