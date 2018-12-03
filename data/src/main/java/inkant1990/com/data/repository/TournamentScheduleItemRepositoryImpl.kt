@@ -18,7 +18,7 @@ class TournamentScheduleItemRepositoryImpl @Inject constructor(
     val utils: Utils
 ) : TournamentScheduleRepositoryImpl {
     companion object {
-        const val TIME_BUFER = 50000
+        const val TIME_BUFER = 5000000
         private var lastTimeUpdate = 0L
     }
 

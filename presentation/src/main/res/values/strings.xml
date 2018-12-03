@@ -17,4 +17,8 @@
     <string name="clubs">clubs</string>
     <string name="value">Value</string>
     <string name="round">Round</string>
+    <string name="use_this_to_go_ntournament_table">Use this to go\ntournament table</string>
+    <string name="click_it_to_go_rankings_screen">Click it to go\nrankings screen</string>
+    <string name="click_to_go_team_profile_screen">Click to go\nteam profile screen</string>
+    <string name="click_it_to_go_schedule_screen">Click it to go\nschedule screen</string>
 </resources>

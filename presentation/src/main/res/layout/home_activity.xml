@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
 
 >
@@ -13,6 +13,7 @@
             style="@style/LaligaStyleBack"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
         <FrameLayout
                 android:id="@+id/homeContainer"
                 android:layout_width="match_parent"
@@ -33,9 +34,10 @@
                 app:layout_constraintWidth_percent="0.25"
                 app:layout_constraintWidth_default="percent"
                 android:layout_height="0dp"
+                android:stateListAnimator="@null"
                 style="@style/HomeActivityStyle"
                 android:text="@string/table"
-                android:onClick="@{(v) -> viewModel.goToTable(v)  }"/>
+                android:onClick="@{(v) -> viewModel.goToTable(v)  }" tools:targetApi="lollipop"/>
         <Button
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/btTable"
@@ -46,9 +48,10 @@
                 app:layout_constraintWidth_percent="0.25"
                 app:layout_constraintWidth_default="percent"
                 android:layout_height="0dp"
+                android:stateListAnimator="@null"
                 style="@style/HomeActivityStyle"
                 android:text="@string/stats"
-                android:onClick="@{(v) -> viewModel.goToStats(v)  }"/>
+                android:onClick="@{(v) -> viewModel.goToStats(v)  }" tools:targetApi="lollipop"/>
         <Button app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/btStats"
                 android:id="@+id/btSchedule"
@@ -56,23 +59,81 @@
                 app:layout_constraintHeight_percent="0.1"
                 app:layout_constraintHeight_default="percent"
                 app:layout_constraintWidth_percent="0.25"
+                android:stateListAnimator="@null"
                 app:layout_constraintWidth_default="percent"
                 android:layout_height="0dp"
                 style="@style/HomeActivityStyle"
                 android:onClick="@{(v) -> viewModel.goToSchedule(v)}"
-                android:text="@string/schedule"/>
+                android:text="@string/schedule" tools:targetApi="lollipop"/>
         <Button app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/btSchedule"
                 android:id="@+id/btInfo"
                 android:layout_width="0dp"
                 app:layout_constraintHeight_percent="0.1"
+                android:stateListAnimator="@null"
                 app:layout_constraintHeight_default="percent"
                 app:layout_constraintWidth_percent="0.25"
                 app:layout_constraintWidth_default="percent"
                 android:layout_height="0dp"
                 style="@style/HomeActivityStyle"
                 android:onClick="@{() -> viewModel.goToClubList()}"
-                android:text="@string/clubs"/>
+                android:text="@string/clubs" tools:targetApi="lollipop"/>
+
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/tipTable"
+                  app:layout_constraintBottom_toTopOf="@id/btTable"
+                  app:layout_constraintLeft_toRightOf="@id/btTable"
+                  android:text="@string/use_this_to_go_ntournament_table"
+                  android:textColor="@color/Black"
+                  android:background="#f1dd05"
+                  android:elevation="3dp"
+                  android:onClick="tipClick"
+                  android:visibility="gone"
+                  android:layout_marginBottom="10dp"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/tipStats"
+                  app:layout_constraintBottom_toTopOf="@id/btStats"
+                  app:layout_constraintLeft_toRightOf="@id/btStats"
+                  android:text="@string/click_it_to_go_rankings_screen"
+                  android:textColor="@color/Black"
+                  android:background="#f1dd05"
+                  android:elevation="3dp"
+                  android:onClick="tipClick"
+                  android:layout_marginBottom="10dp"
+                  android:visibility="gone"
+
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/tipSchedule"
+                  app:layout_constraintBottom_toTopOf="@id/btSchedule"
+                  app:layout_constraintLeft_toRightOf="@id/btSchedule"
+                  android:text="@string/click_it_to_go_schedule_screen"
+                  android:textColor="@color/Black"
+                  android:background="#f1dd05"
+                  android:elevation="3dp"
+                  android:onClick="tipClick"
+                  android:visibility="gone"
+                  android:layout_marginBottom="10dp"
+        />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/tipClubs"
+                  app:layout_constraintBottom_toTopOf="@id/btInfo"
+                  app:layout_constraintLeft_toLeftOf="@id/btSchedule"
+                  android:text="@string/click_to_go_team_profile_screen"
+                  android:textColor="@color/Black"
+                  android:background="#f1dd05"
+                  android:elevation="3dp"
+                  android:onClick="tipClick"
+                  android:visibility="gone"
+                  android:layout_marginBottom="10dp"
+        />
+        <View android:layout_width="match_parent" android:layout_height="match_parent"
+              android:background="#CC302e2e"
+              android:id="@+id/shadowView"
+              android:visibility="gone"
+        />
 
 
     </android.support.constraint.ConstraintLayout>
