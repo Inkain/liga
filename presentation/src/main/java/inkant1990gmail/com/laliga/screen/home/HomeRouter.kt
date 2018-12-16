@@ -1,6 +1,5 @@
 package inkant1990gmail.com.laliga.screen.home
 
-import android.content.Intent
 import inkant1990gmail.com.laliga.R
 import inkant1990gmail.com.laliga.base.BaseRouter
 import inkant1990gmail.com.laliga.screen.rankings.RankingsFragment
@@ -10,10 +9,8 @@ import inkant1990gmail.com.laliga.screen.teamProfile.TeamProfileFragment
 import inkant1990gmail.com.laliga.screen.tornamentSchedule.ScheduleFragment
 
 class HomeRouter(activity: HomeActivity) : BaseRouter<HomeActivity>(activity) {
-    fun goToTeamProfileActivity(teamID: String) {
-        val intent = Intent(activity.baseContext, TeamProfileFragment::class.java)
-        intent.putExtra("teamID", teamID)
-        activity.startActivity(intent)
+    fun goToTeamProfileFragment(teamID: String) {
+        replaceFragment(activity.supportFragmentManager, TeamProfileFragment.getInstance(teamID), R.id.homeContainer)
     }
 
     fun goToTable() {

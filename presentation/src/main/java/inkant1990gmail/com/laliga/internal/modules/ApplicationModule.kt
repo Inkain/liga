@@ -23,7 +23,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun standingsRepository(standingsItemRepository: StandingsItemRepositoryImpl): StandingsRepositoryImpl {
+    fun provideStandingsRepository(standingsItemRepository: StandingsItemRepositoryImpl): StandingsRepositoryImpl {
 
         return standingsItemRepository
     }
@@ -31,7 +31,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun rankingsRepository(playerRankinsRepository: PlayerRankingsItemRepository): PlayerRankingsRepositoryImpl {
+    fun provideRankingsRepository(playerRankinsRepository: PlayerRankingsItemRepository): PlayerRankingsRepositoryImpl {
 
         return playerRankinsRepository
     }
@@ -39,7 +39,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun scheduleRepository(scheduleItemRepository: ScheduleItemRepository): ScheduleRepositoryImpl {
+    fun provideScheduleTournamentRepository(scheduleItemRepository: TournamentScheduleItemRepositoryImpl): TournamentScheduleRepositoryImpl {
 
         return scheduleItemRepository
     }
@@ -47,15 +47,7 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun scheduleTournamentRepository(scheduleItemRepository: TournamentScheduleItemRepositoryImpl): TournamentScheduleRepositoryImpl {
-
-        return scheduleItemRepository
-    }
-
-    @Provides
-    @NotNull
-    @Singleton
-    fun teamListRepository(repository: TeamListRepository): TeamListRepositoryImpl {
+    fun provideTeamListRepository(repository: TeamListRepository): TeamListRepositoryImpl {
 
         return repository
     }
@@ -63,10 +55,17 @@ class ApplicationModule(private val app: AndroidApplication) {
     @Provides
     @NotNull
     @Singleton
-    fun uiThread(thread: UIThread): PostExecutorThread {
+    fun provideTeamProfileRepository(repository: TeamProfileItemRepository): TeamProfileRepositoryImpl {
+
+        return repository
+    }
+
+    @Provides
+    @NotNull
+    @Singleton
+    fun provideUiThread(thread: UIThread): PostExecutorThread {
 
         return thread
     }
-
 
 }

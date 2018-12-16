@@ -13,11 +13,7 @@ class StandingsListViewModel @Inject constructor(
 ) : BaseViewModel<HomeRouter>() {
 
     init {
-        adapter.setOnItemClickListener(object : StandingsListAdapter.OnItemClickListener {
-            override fun onClick(id: String) {
-                router?.goToTeamProfileActivity(id)
-            }
-        })
+
 
         addToDisposable(getData.execute(Unit).subscribeBy(
             onNext = {

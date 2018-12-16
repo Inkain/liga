@@ -11,7 +11,11 @@ class TeamListViewModel @Inject constructor(
     val adapter: TeamListAdapter
 ) : BaseViewModel<HomeRouter>() {
     init {
-
+        adapter.setOnItemClickListener(object : TeamListAdapter.OnItemClickListener {
+            override fun onClick(id: String) {
+                router?.goToTeamProfileFragment(id)
+            }
+        })
         addToDisposable(getData.execute(Unit).subscribeBy {
             adapter.setData(it)
             adapter.notifyDataSetChanged()

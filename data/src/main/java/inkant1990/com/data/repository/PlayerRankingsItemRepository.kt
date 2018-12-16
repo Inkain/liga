@@ -26,7 +26,7 @@ class PlayerRankingsItemRepository @Inject constructor(
         return rankingsDao.getScores()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             dbOperation(it)
                         }
@@ -56,7 +56,7 @@ class PlayerRankingsItemRepository @Inject constructor(
         return rankingsDao.getAssists()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             dbOperation(it)
                         }
@@ -99,7 +99,7 @@ class PlayerRankingsItemRepository @Inject constructor(
         return rankingsDao.getReds()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             dbOperation(it)
                         }
@@ -126,7 +126,7 @@ class PlayerRankingsItemRepository @Inject constructor(
         return rankingsDao.getYellows()
             .flatMap { dbList ->
                 if (checkDb(dbList)) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             dbOperation(it)
                         }

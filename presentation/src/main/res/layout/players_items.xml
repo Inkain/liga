@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="obj" type="inkant1990.com.domain.entity.teamProfile.PlayersTeam"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+
+    >
+        <TextView android:id="@+id/tvNumber"
+                  android:layout_marginTop="5dp"
+                  android:text="@{obj.jerseyNumber.toString()}"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintWidth_percent="0.15"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:gravity="fill_vertical"
+                  app:layout_constraintStart_toStartOf="parent"
+                  style="@style/LaligaStyleStandingsTop"
+        />
+        <TextView android:id="@+id/tvName"
+                  android:layout_marginTop="5dp"
+                  android:text="@{obj.name}"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintWidth_percent="0.4"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:gravity="fill_vertical"
+                  app:layout_constraintStart_toEndOf="@id/tvNumber"
+                  style="@style/LaligaStyleStandingsTop"
+        />
+        <TextView android:id="@+id/tvNational"
+                  android:layout_marginTop="5dp"
+                  android:text="@{obj.nationality}"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintWidth_percent="0.20"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:gravity="fill_vertical"
+                  app:layout_constraintStart_toEndOf="@id/tvName"
+                  style="@style/LaligaStyleStandingsTop"
+        />
+        <TextView android:id="@+id/tvType"
+                  android:layout_marginTop="5dp"
+                  android:text="@{obj.type}"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintWidth_default="percent"
+                  app:layout_constraintWidth_percent="0.25"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:gravity="fill_vertical"
+                  app:layout_constraintStart_toEndOf="@id/tvNational"
+                  style="@style/LaligaStyleStandingsTop"
+        />
+    </android.support.constraint.ConstraintLayout>
+</layout>

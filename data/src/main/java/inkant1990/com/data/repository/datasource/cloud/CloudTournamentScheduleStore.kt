@@ -9,7 +9,7 @@ import javax.inject.Inject
 class CloudTournamentScheduleStore @Inject constructor(private val apiGet: ApiGet) :
     DataStore<ScheduleResponse> {
 
-    override fun getData(): Flowable<ScheduleResponse> {
+    override fun getData(id: String?): Flowable<ScheduleResponse> {
         return apiGet.getTournamentSchedule()
     }
 }

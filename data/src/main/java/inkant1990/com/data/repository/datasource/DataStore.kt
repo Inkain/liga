@@ -4,5 +4,5 @@ import io.reactivex.Flowable
 
 interface DataStore<T> {
 
-    fun getData(): Flowable<T>
+    fun getData(id:String?): Flowable<T>
 }

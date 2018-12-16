@@ -26,7 +26,7 @@ class StandingsItemRepositoryImpl @Inject constructor(
         return standingsDao.get()
             .flatMap { standingsDbList ->
                 if ((standingsDbList.isEmpty() || utils.getTime() - lastTimeUpdate > TIME_BUFER) && utils.getCoonect()) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             lastTimeUpdate = utils.getTime()
                             val list = it.transformToDb()

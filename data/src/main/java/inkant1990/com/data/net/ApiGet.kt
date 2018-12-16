@@ -18,16 +18,16 @@ class ApiGet @Inject constructor() {
         return api.getPlayerRankings()
     }
 
-    fun getDailyScheduleData(): Flowable<inkant1990.com.data.entity.dailyShedule.Response> {
-        return api.getDailySchedule()
-    }
-
     fun getTournamentSchedule(): Flowable<ScheduleResponse> {
         return api.getTournamentSchedule()
     }
 
-    fun getTeamList():Flowable<TeamListResponse>{
+    fun getTeamList(): Flowable<TeamListResponse> {
         return api.getTeamList()
+    }
+
+    fun getTeamProfile(id: String?): Flowable<inkant1990.com.data.entity.teamProfile.Response> {
+        return api.getTeamProfile(id)
     }
 
 }

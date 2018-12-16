@@ -21,4 +21,22 @@
     <string name="click_it_to_go_rankings_screen">Click it to go\nrankings screen</string>
     <string name="click_to_go_team_profile_screen">Click to go\nteam profile screen</string>
     <string name="click_it_to_go_schedule_screen">Click it to go\nschedule screen</string>
+    <string name="manager_name">Manager name</string>
+    <string name="bma">Manager nationality</string>
+    <string name="stadium_name">Stadium name</string>
+    <string name="no_connection">No connection!!</string>
+    <string name="stadium_capacity">Stadium capacity</string>
+    <string name="city">City</string>
+    <string name="position">Pos</string>
+    <string name="matches_won">Matches won</string>
+    <string name="matches_drawn">Matches drawn</string>
+    <string name="matches_lost">Matches lost</string>
+    <string name="goal_scored">Goal scored</string>
+    <string name="goals_conceded">Goals conceded</string>
+    <string name="num">Num</string>
+    <string name="name">Name</string>
+    <string name="nation">Nation</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="birth">Birth</string>
 </resources>

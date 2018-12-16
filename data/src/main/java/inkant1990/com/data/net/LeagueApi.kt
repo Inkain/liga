@@ -5,21 +5,24 @@ import inkant1990.com.data.entity.standing.Response
 import inkant1990.com.data.entity.teamList.TeamListResponse
 import inkant1990.com.data.entity.tornamentSchedule.ScheduleResponse
 import io.reactivex.Flowable
-import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface LeagueApi {
-    //@GET("XML_dynamic.asp")
-    //abstract fun getVal(@Query("date_req1") date_reg1: String, @Query("date_req2") date_reg2: String, @Query("VAL_NM_RQ") Val_NM_RQ: String): Observable<Response>
 
     @GET("tournaments/sr:tournament:8/standings.json?api_key=p759bd77wseaafgn8af4ev9a")
     fun getTable(): Flowable<Response>
+
     @GET("tournaments/sr:tournament:8/leaders.json?api_key=p759bd77wseaafgn8af4ev9a")
-    fun getPlayerRankings():Flowable<RankingsResponse>
-    @GET("schedules/2018-10-01/schedule.json?api_key=p759bd77wseaafgn8af4ev9a")
-    fun getDailySchedule():Flowable<inkant1990.com.data.entity.dailyShedule.Response>
+    fun getPlayerRankings(): Flowable<RankingsResponse>
+
+
     @GET("tournaments/sr:tournament:8/schedule.json?api_key=p759bd77wseaafgn8af4ev9a")
-    fun getTournamentSchedule():Flowable<ScheduleResponse>
+    fun getTournamentSchedule(): Flowable<ScheduleResponse>
+
     @GET("tournaments/sr:tournament:8/info.json?api_key=p759bd77wseaafgn8af4ev9a")
-    fun getTeamList():Flowable<TeamListResponse>
+    fun getTeamList(): Flowable<TeamListResponse>
+
+    @GET("teams/{id}/profile.json?api_key=p759bd77wseaafgn8af4ev9a")
+    fun getTeamProfile(@Path("id") id: String?): Flowable<inkant1990.com.data.entity.teamProfile.Response>
 }

@@ -25,7 +25,7 @@ class TeamListRepository @Inject constructor(
         return dao.get()
             .flatMap { dbList ->
                 if ((dbList.isEmpty() || (utils.getTime() - lastTimeUpdate) > TIME_BUFER) && utils.getCoonect()) {
-                    cloud.getData()
+                    cloud.getData(null)
                         .doOnNext {
                             lastTimeUpdate = utils.getTime()
                             val list = it.transformToDb()

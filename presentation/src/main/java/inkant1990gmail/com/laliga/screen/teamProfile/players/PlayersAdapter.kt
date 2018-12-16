@@ -1,28 +1,27 @@
-package inkant1990gmail.com.laliga.screen.standings
+package inkant1990gmail.com.laliga.screen.teamProfile.players
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import inkant1990.com.domain.entity.standings.TeamStandings
+import inkant1990.com.domain.entity.teamProfile.PlayersTeam
 import inkant1990gmail.com.laliga.R
-import inkant1990gmail.com.laliga.databinding.StandingsItemsBinding
+import inkant1990gmail.com.laliga.databinding.PlayersItemsBinding
 import javax.inject.Inject
 
-class StandingsListAdapter @Inject constructor() : RecyclerView.Adapter<StandingsListAdapter.Holder>() {
-    private var list: List<TeamStandings> = mutableListOf()
+class PlayersAdapter @Inject constructor() : RecyclerView.Adapter<PlayersAdapter.Holder>() {
+    private var list: List<PlayersTeam> = mutableListOf()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): Holder {
         val layoutInflater = LayoutInflater.from(p0.getContext())
-        val binding = DataBindingUtil.inflate<StandingsItemsBinding>(
-            layoutInflater, R.layout.standings_items, p0, false
+        val binding = DataBindingUtil.inflate<PlayersItemsBinding>(
+            layoutInflater, R.layout.players_items, p0, false
         )
         return Holder(binding)
     }
 
-    fun setData(list: List<TeamStandings>) {
+    fun setData(list: List<PlayersTeam>) {
         this.list = list
-
     }
 
     override fun getItemCount(): Int {
@@ -33,9 +32,10 @@ class StandingsListAdapter @Inject constructor() : RecyclerView.Adapter<Standing
         holder.bind(list.elementAt(position))
     }
 
-    inner class Holder(val binding: StandingsItemsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(obj: TeamStandings) {
+    inner class Holder(val binding: PlayersItemsBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(obj: PlayersTeam) {
             binding.obj = obj
             binding.executePendingBindings()
         }

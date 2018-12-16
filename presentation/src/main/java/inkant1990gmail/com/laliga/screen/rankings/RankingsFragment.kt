@@ -15,6 +15,7 @@ import inkant1990gmail.com.laliga.screen.rankings.assistsList.AssistsFragment
 import inkant1990gmail.com.laliga.screen.rankings.goalsList.GoalsListFragment
 import inkant1990gmail.com.laliga.screen.rankings.redsList.RedListFragment
 import inkant1990gmail.com.laliga.screen.rankings.yellowLists.YellowListFragment
+import kotlinx.android.synthetic.main.rankings_fragment.*
 
 class RankingsFragment : BaseMvvmFragment<RankingsViewModel, HomeRouter, RankingsFragmentBinding>() {
     private lateinit var mPager: ViewPager
@@ -41,9 +42,9 @@ class RankingsFragment : BaseMvvmFragment<RankingsViewModel, HomeRouter, Ranking
         mFragments.add(AssistsFragment.getInstance())
         mFragments.add(YellowListFragment.getInstance())
         mFragments.add(RedListFragment.getInstance())
-        mPager = activity?.findViewById(R.id.vp_fragments_container) as ViewPager
+        mPager = vp_fragments_container
         mPager.setAdapter(ViewPagerAdapter(childFragmentManager, mFragments))
-        mTabLayout = activity!!.findViewById(R.id.tl_tabs_container)
+        mTabLayout = tl_tabs_container
         mTabLayout.setupWithViewPager(mPager)
 
     }

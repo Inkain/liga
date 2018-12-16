@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class CloudTeamListStore @Inject constructor(private val apiGet: ApiGet) :
     DataStore<TeamListResponse> {
-    override fun getData(): Flowable<TeamListResponse> {
+    override fun getData(id: String?): Flowable<TeamListResponse> {
         return apiGet.getTeamList()
     }
 }

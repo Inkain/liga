@@ -25,7 +25,7 @@ class TournamentScheduleItemRepositoryImpl @Inject constructor(
     override fun getTournamentSchedule(): Flowable<List<Round>> {
         return dao.getRounds().flatMap { dbList ->
             if ((dbList.isEmpty() || utils.getTime() - lastTimeUpdate > TIME_BUFER) && utils.getCoonect()) {
-                cloud.getData()
+                cloud.getData(null)
                     .doOnNext {
                         lastTimeUpdate = utils.getTime()
                         val list = it.transformToRoundDb()

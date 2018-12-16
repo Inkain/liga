@@ -10,7 +10,6 @@ import inkant1990gmail.com.laliga.databinding.RankingsItemsBinding
 import javax.inject.Inject
 
 class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankingAdapter.Holder>() {
-    private lateinit var listener: OnItemClickListener
     private var list: List<Rankings> = mutableListOf()
 
 
@@ -28,18 +27,7 @@ class BaseRankingAdapter @Inject constructor() : RecyclerView.Adapter<BaseRankin
         this.list = list
     }
 
-    interface OnItemClickListener {
-        fun onClick(id: String)
-    }
-
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
-    }
-
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.itemView.setOnClickListener {
-
-        }
         holder.bind(list.get(position))
     }
 
